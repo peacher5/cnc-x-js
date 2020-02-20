@@ -156,7 +156,7 @@ numbers.pop() // ลบตัวสุดท้าย
 ```
 
 ```js
-numberss.plice(2, 1) // ลบตั้งแต่ index ที่ 2 ไป 1 ตัว
+numbers.splice(2, 1) // ลบตั้งแต่ index ที่ 2 ไป 1 ตัว
 ```
 
 #### วนดู element ใน list
