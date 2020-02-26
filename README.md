@@ -2,7 +2,7 @@
 
 ### หัวข้อทั้งหมด
 
-- [Let's say 'Hello World!'](lets-say-hello-world)
+- [Let's say 'Hello World!'](#lets-say-hello-world)
 - [Data Types](#data-types)
 - [Operators](#operators)
 - [การประกาศตัวแปร](#การประกาศตัวแปร)
@@ -168,6 +168,12 @@ console.log(`2 x 5 = ${result}`)
 console.log('2 x 5 = ' + result)
 ```
 
+```js
+const command = 'echo'
+
+console.log(`${command} ${111 * 5}`) // echo 555
+```
+
 ### String Methods
 
 ```js
@@ -222,31 +228,31 @@ const numbers = [20, 40, 60]
 const anythingJingleBell = ['abc', 20, 3.14, true]
 ```
 
-#### เข้าถึงค่าใน list ตาม index
+### เข้าถึงค่าใน list ตาม index
 
 ```js
 console.log(numbers[0])
 ```
 
-#### เปลี่ยนค่าใน list ตาม index
+### เปลี่ยนค่าใน list ตาม index
 
 ```js
 numbers[0] = 'xyz'
 ```
 
-#### ดูขนาดของ list
+### ดูขนาดของ list
 
 ```js
 numbers.length
 ```
 
-#### เพิ่ม element ใน list
+### เพิ่ม element ใน list
 
 ```js
 numbers.push('Hello')
 ```
 
-#### ลบ element ใน list
+### ลบ element ใน list
 
 ```js
 numbers.pop() // ลบตัวสุดท้าย
@@ -256,7 +262,7 @@ numbers.pop() // ลบตัวสุดท้าย
 numbers.splice(2, 1) // ลบตั้งแต่ index ที่ 2 ไป 1 ตัว
 ```
 
-#### วนดู element ใน list
+### วนดู element ใน list
 
 #### for i
 
@@ -287,6 +293,8 @@ for (const n of numbers) {
 ```js
 numbers.forEach(n => console.log(n))
 ```
+
+### Method อื่น ๆ ของ List
 
 #### map
 
