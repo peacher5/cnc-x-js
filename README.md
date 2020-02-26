@@ -8,10 +8,12 @@
 - [การประกาศตัวแปร](#การประกาศตัวแปร)
 - [เงื่อนไข](#เงื่อนไข)
 - [Loop](#loop)
+- [String](#string)
 - [Function](#function)
 - [List](#list)
+- [Object](#object)
 
-### ติดตั้ง NodeJS
+### ติดตั้ง Node.js
 
 https://nodejs.org
 
@@ -20,6 +22,11 @@ https://nodejs.org
 ```js
 console.log('Hello World!')
 ```
+
+### วิธี run ด้วย Node.js
+
+- save ไฟล์เป็นนามสกุล `.js`
+- ใช้คำสั่ง `node` ตามด้วยชื่อไฟล์ เช่น `node main.js`
 
 ## Data Types
 
@@ -135,6 +142,46 @@ for (let i = 0; i < 5; i++) {
 }
 ```
 
+## String
+
+### ประกาศ String
+
+```js
+const dept1 = 'Computer Science'
+const dept2 = "Computer Science"
+const dept3 = `Computer Science`
+```
+
+> single quote (') กับ double quote (") เหมือนกัน
+
+> back quote (`) สามารถทำ template string ได้
+
+### Template String
+
+สามารถแทรกตัวแปรหรือ expression ลงใน string ได้โดยใช้ `${}` อยู่ภายใน ``` `` ```
+
+```js
+const result = 2 * 5
+
+console.log(`2 x 5 = ${result}`)
+// ให้ผลลัพธ์เหมือนกับ
+console.log('2 x 5 = ' + result)
+```
+
+### String Methods
+
+```js
+const txt = 'Hello World'
+```
+
+#### นับความยาว string
+
+```js
+txt.length
+```
+
+#### [ดู method อื่น ๆ](https://www.w3schools.com/js/js_string_methods.asp)
+
 ## Function
 
 ### Function ปกติ
@@ -157,7 +204,7 @@ const add = (a, b) => {
 console.log(add(2, 3))
 ```
 
-#### หากไม่ใส่ {} จะ return statement นั้นให้เลย
+#### หากไม่ใส่ {} จะ return คำสั่งนั้นให้เลย
 
 ```js
 const add = (a, b) => a + b
@@ -173,6 +220,12 @@ const numbers = [20, 40, 60]
 
 ```js
 const anythingJingleBell = ['abc', 20, 3.14, true]
+```
+
+#### เข้าถึงค่าใน list ตาม index
+
+```js
+console.log(numbers[0])
 ```
 
 #### เปลี่ยนค่าใน list ตาม index
@@ -240,13 +293,79 @@ numbers.forEach(n => console.log(n))
 ```js
 numbers = [1, 2, 3, 4]
 numbers.map(n => n * 10) // [10, 20, 30, 40]
-                         // map จะ return list ใหม่ ไม่ไปแก้ list เดิม
 ```
+
+> map จะ return list ใหม่ ไม่ไปแก้ list เดิม
 
 #### filter
 
 ```js
 numbers = [1, 3, 5, 7, 9]
 numbers.filter(n => n != 5) // [1, 3, 7, 9]
-                            // filter จะ return list ใหม่ ไม่ไปแก้ list เดิม
+```
+
+> filter จะ return list ใหม่ ไม่ไปแก้ list เดิม
+
+### List เป็น Mutable
+
+```js
+const numbers = [1, 2, 3]
+const otherNumbers = numbers
+
+console.log('Before: ' + numbers) // Before: [1, 2, 3]
+
+otherNumbers[1] = 9
+
+console.log('After: ' + numbers) // After: [1, 9, 3]
+```
+
+
+## Object
+
+สามารถเก็บค่าหลาย ๆ ค่าไว้ใน object ได้ในรูปแบบ key-value pair
+
+### สร้าง object
+
+```js
+const student = {
+    id: '6010405360',
+    name: 'Peach',
+    university: 'KU'
+}
+```
+
+### เข้าถึงค่าใน object
+
+```js
+console.log(student.name)
+// หรือ
+console.log(student['name'])
+```
+
+### เพิ่มค่าใน object
+
+```js
+student.dept = 'CS'
+// หรือ
+student['dept'] = 'CS'
+```
+
+### แก้ไขค่าใน object
+
+```js
+student.name = 'Peranut W.'
+// หรือ
+student['name'] = 'Peranut W.'
+```
+
+### Object เป็น Mutable
+
+```js
+const std2 = student
+
+console.log('Before: ' + student.id) // Before: 6010405360
+
+std2.id = '1234'
+
+console.log('After: ' + student.id) // After: 1234
 ```
